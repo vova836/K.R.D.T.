@@ -10,6 +10,8 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
             TaxiDispatcher dispatcher = new TaxiDispatcher();
             dispatcher.ProcessTaxiOrder();
             //TaxiDriver driver = new TaxiDriver();

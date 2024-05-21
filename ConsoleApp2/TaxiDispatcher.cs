@@ -9,7 +9,6 @@ namespace ConsoleApp2
 {
     class TaxiDispatcher
     {
-
         private string[] dispatcherMetting = {
         "Здравствуйте, укажите пожалуйста, адрес откуда вас нужно забрать.",
         "Здраствуйте! Пожалуйста, укажите свое место назначения.",
@@ -44,6 +43,9 @@ namespace ConsoleApp2
 
         public void ProcessTaxiOrder()
         {
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Thread.Sleep(1000);
             Console.Write("Пользователь: ");
             string talktion = Console.ReadLine();
 
@@ -55,9 +57,12 @@ namespace ConsoleApp2
 
             Random rand = new Random();
             int index = rand.Next(dispatcherMetting.Length);
+            Console.ForegroundColor = ConsoleColor.Black;
             Thread.Sleep(1000);
             Console.WriteLine("Диспетчер: " + dispatcherMetting[index]);
 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Thread.Sleep(1000);
             Console.Write("Пользователь: ");
             string pickupLocation = Console.ReadLine();
 
@@ -68,9 +73,12 @@ namespace ConsoleApp2
             }
 
             index = rand.Next(dispatcherGoing.Length);
+            Console.ForegroundColor = ConsoleColor.Black;
             Thread.Sleep(1000);
             Console.WriteLine("Диспетчер: " + dispatcherGoing[index]);
 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Thread.Sleep(1000);
             Console.Write("Пользователь: ");
             string destination = Console.ReadLine();
 
@@ -81,9 +89,12 @@ namespace ConsoleApp2
             }
 
             index = rand.Next(dispatcherTimadialog.Length);
+            Console.ForegroundColor = ConsoleColor.Black;
             Thread.Sleep(1000);
             Console.WriteLine("Диспетчер: " + dispatcherTimadialog[index]);
 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Thread.Sleep(1000);
             Console.Write("Пользователь: ");
             string pickupTime = Console.ReadLine();
 
@@ -94,8 +105,10 @@ namespace ConsoleApp2
             }
 
             index = rand.Next(dispatcherTaxidiases.Length);
+            Console.ForegroundColor = ConsoleColor.Black;
             Thread.Sleep(1000);
             Console.WriteLine("Диспетчер: " + dispatcherTaxidiases[index]);
+            Console.ForegroundColor = ConsoleColor.Black;
             Thread.Sleep(1000);
             Console.WriteLine("Диспетчер: Также вы получите уведомление на телефон, какая машина к вам приедет и кто водитель.");
 
@@ -106,7 +119,8 @@ namespace ConsoleApp2
                 DriverName = "Петров Петр Петрович"
             };
 
-            Thread.Sleep(2000);
+            Console.ForegroundColor = ConsoleColor.Black;
+            Thread.Sleep(3000);
             Console.WriteLine($"Уведомление: Вам назначено такси. Номер: {taxi.CarNumber}, Цвет: {taxi.Color}. Водитель: {taxi.DriverName}.");
         }
 
@@ -127,8 +141,8 @@ namespace ConsoleApp2
         {
             Random rand = new Random();
             int index = rand.Next(inappropriateResponses.Length);
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Диспетчер: " + inappropriateResponses[index]);
         }
     }
 }
-
